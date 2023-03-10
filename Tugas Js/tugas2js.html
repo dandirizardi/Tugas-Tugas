@@ -1,0 +1,46 @@
+<script>
+
+
+
+    let pegawai = "Dandi Rizardi"
+    let jabatan = "Manager"
+    let status = "Lajang"
+
+    
+    if (jabatan == 'Manager'){
+        GP = 10000000;
+    }else if (jabatan == 'Asistan Manager'){
+        GP = 8000000;
+    }else if(jabatan == 'Staff'){
+        GP = 500000;
+    }
+
+    let TJ = 0.1 * GP;
+    let bpjs = 0.1 * GP;
+
+    document.write("Data Pegawai <br>"+
+    "<br> Pegawai : "+pegawai+
+    "<br> Jabatan : "+jabatan+
+    "<br> Status : "+status+"<br>"+
+    "<br> Gaji Pokok : Rp "+GP+
+    "<br> Tunjangan Jabatan : Rp "+TJ+
+    "<br> BPJS : Rp "+bpjs+"<br> <br>"
+    )
+
+    let TK = 0;
+    if(status == "Lajang"){
+        document.write ("Anda tidak mendpatkan tunjangan keluarga/Belum menikah : Rp "+TK);
+    }else if (status == "Menikah"){
+        TK = 0.1 * GP;
+        document.write ("Anda mendapat tunjangan keluarga sebesar : "+TK);
+    }
+     
+    let totalgaji = GP + TJ + bpjs + TK;
+
+    document.write("<br> Total seluruh penghasilan :  Rp "+totalgaji)
+
+
+   
+
+
+</script>
