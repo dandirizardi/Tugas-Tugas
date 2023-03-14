@@ -1,0 +1,84 @@
+<script>
+
+    //array of object
+    //atau array di dalam array
+
+    let p1 = {nama : "Dandi", nilai:92};
+    let p2 = {nama : "Rizar", nilai:80};
+    let p3 = {nama : "Banu", nilai:62};
+    let p4 = {nama : "Putri", nilai:83};
+    let p5 = {nama : "Layla", nilai:58};
+    let p6 = {nama : "Dadang", nilai:96};
+    let p7 = {nama : "Bayu", nilai:80};
+    let p8 = {nama : "Figo", nilai:72};
+    let p9 = {nama : "Sandy", nilai:80};
+    let p10 = {nama : "Rayhan", nilai:79};
+
+    let person = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+
+</script>
+<h3>
+    <table style="padding: 20; text-align: center; width: 100%;">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+                <th>Grade</th>
+                <th>Predikat</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+
+                var no=1;
+                var warna;
+
+                for (p of person){
+
+                let grade = "";
+                let nilai = "";
+
+                if(p.nilai >= 90 && p.nilai <=100){
+                    p.grade = "A";
+                }else if(p.nilai >= 80 && p.nilai <=89){
+                    p.grade = "B";
+                }else if(p.nilai >= 70 && p.nilai <=79){
+                    p.grade = "C";
+                }else if(p.nilai >= 60 && p.nilai <=69){
+                    p.grade = "D";
+                }else if(p.nilai >= 50 && p.nilai <=59){
+                    p.grade = "E";
+                }else p.grade=""
+
+                switch(p.grade){
+                    case "A" : p.predikat ="Sangat Baik"; break;
+                    case "B" : p.predikat ="Baik"; break;
+                    case "C" : p.predikat ="Cukup"; break;
+                    case "D" : p.predikat ="Kurang"; break;
+                    case "E" : p.predikat ="Sangat Kurang"; break;
+                    default : p.predikat =""; break;
+                }
+
+
+                    let ket = (p.nilai >= 60)? "Lulus" : "Gagal";
+                        warna = (no % 2== 0)?'orange':'grey';
+                        document.write(`<tr bgcolor="${warna}"> 
+                        
+
+                        <td>${no++}</td> 
+                        <td>${p.nama}</td>
+                        <td>${p.nilai}</td>
+                        <td>${p.grade}</td>
+                        <td>${p.predikat}</td>
+                        <td>${ket}</td>
+                        </tr>`);
+                    
+                }
+                 
+
+            </script>
+        </tbody>
+    </table>
+</h3>
