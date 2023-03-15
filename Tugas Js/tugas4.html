@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tugas dandi</title>
+
+<style>
+    h1{
+        text-align: center;
+        color: darkcyan;
+        font-family: sans-serif;
+        margin-top: 20%;
+    }
+
+    fieldset{
+        width: 250px;
+        margin-left: 40%;
+        border-radius: 20px;
+        border-color: black;
+    }
+    body{
+        background-color: burlywood;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <form id="kalkulator">
+    <fieldset> 
+    <table>
+    <tr>
+        <td>Angka 1</td>
+        <td>:</td>
+        <td>
+            <input type="text" name="angka"  placeholder="masukan angka pertama"><br>
+        </td>
+        
+    </tr>
+    <tr>
+        <td>Angka 2</td>
+        <td>:</td>
+        <td>
+            <input type="text" name="angka2"  placeholder="masukan angka kedua"><br>
+        </td>
+    </tr>
+    <tr>
+        <td>Hasil</td>
+        <td>:</td>
+        <td>
+            <input type="text" value="Di pop up alert" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+        <button type="button" name="btn_tambah" onclick="tambah()">+</button>
+        <button type="button" name="btn_kurang" onclick="kurang()">-</button>
+        <button type="button" name="btn_pembagian" onclick="pembagian()">./.</button>
+        <button type="button" name="btn_perkalian" onclick="perkalian()">x</button>
+        <button type="button" name="btn_pangkat" onclick="pangkat()">^</button>
+        </td>
+    </tr>
+    </table>
+    </fieldset>
+    </form>
+
+    <script src="js/kalkulator.js"></script>
+
+</body>
+</html>
