@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Dandi</title>
+    <style>
+        div{
+            margin-top: 10%;
+            margin-left: 3%;
+        }
+        body{
+            background-color: bisque;
+        }
+        h2{
+            text-align: center;
+            margin-top: 10%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Click Image to hide</h2>
+    <div class="css">
+    <img class="foto" src="coupe.jpeg" style="width: 36%;">
+    <img class="foto" src="sedan.jpeg" style="width: 30%;">
+    <img class="foto" src="SUVV.jpeg" style="width: 30%;">
+    </div>
+
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".foto").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>
