@@ -1,0 +1,17 @@
+<?php 
+
+$nama = "Dandy";
+$totalBelanja = 300000;
+$keterangan = "";
+
+if($totalBelanja > 100000){
+    $keterangan = "Selamat $nama Anda dapat hadiah ";
+} else {
+    $keterangan = "Terimakasih $nama sudah berbelanja";
+}
+?>
+
+Nama pelanggan : <?= $nama ?>
+<br> Total Belanja : <?= $totalBelanja ?>
+<br> Keterangan : <?= $keterangan ?>
+
