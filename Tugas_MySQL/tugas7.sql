@@ -120,7 +120,28 @@ MariaDB [dbtoko1]> CALL showProduk();
 | AC 1PK     |    2500000 |    3500000 |
 +------------+------------+------------+
 
+//fungsi totalPesanan
 
+MariaDB [dbtoko1]> DELIMITER $$
+MariaDB [dbtoko1]> CREATE PROCEDURE totalPesanan()
+    -> BEGIN
+    -> DECLARE total int;
+    -> SELECT COUNT(id) INTO total FROM pesanan;
+    -> SELECT total;
+    -> END;
+    -> $$
+Query OK, 0 rows affected (0.073 sec)
+
+MariaDB [dbtoko1]> DELIMITER ;
+MariaDB [dbtoko1]> CALL totalPesanan();
++-------+
+| total |
++-------+
+|     2 |
++-------+
+1 row in set (0.022 sec)
+
+Query OK, 1 row affected (0.022 sec)
 
 //menampilkan semua pesanan 
 
@@ -147,3 +168,26 @@ MariaDB [dbtoko1]> SELECT p.id, p.tanggal, p.total, pl.nama_pelanggan
 |  2 | 2022-02-02 |  30000 | Agung          |
 +----+------------+--------+----------------+
 2 rows in set (0.011 sec)
+
+//view baru: pesanan_produk_vw
+
+MariaDB [dbtoko1]> CREATE VIEW pesanan_produk_vw AS
+    -> SELECT pelanggan.nama_pelanggan,tmp_lahir,email, produk.kode,nama, pesanan.id,tanggal,total FROM pesanan
+    -> INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+    -> INNER JOIN produk ON pesanan.pelanggan_id = produk.jenis_produk_id;
+Query OK, 0 rows affected (0.076 sec)
+
+MariaDB [dbtoko1]> SELECT * FROM pesanan_produk_vw;
++----------------+-----------+-----------------+------+------------+----+------------+--------+
+| nama_pelanggan | tmp_lahir | email           | kode | nama       | id | tanggal    | total  |
++----------------+-----------+-----------------+------+------------+----+------------+--------+
+| Agung          | Bandung   | agung@gmail.com | TV01 | TV         |  1 | 2023-02-01 | 200000 |
+| Agung          | Bandung   | agung@gmail.com | TV01 | TV         |  2 | 2022-02-02 |  30000 |
+| Agung          | Bandung   | agung@gmail.com | TV02 | TV 21 Inch |  1 | 2023-02-01 | 200000 |
+| Agung          | Bandung   | agung@gmail.com | TV02 | TV 21 Inch |  2 | 2022-02-02 |  30000 |
+| Agung          | Bandung   | agung@gmail.com | K001 | Kulkas     |  1 | 2023-02-01 | 200000 |
+| Agung          | Bandung   | agung@gmail.com | K001 | Kulkas     |  2 | 2022-02-02 |  30000 |
++----------------+-----------+-----------------+------+------------+----+------------+--------+
+6 rows in set (0.001 sec)
+
+
