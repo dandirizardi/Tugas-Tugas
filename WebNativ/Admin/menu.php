@@ -17,8 +17,10 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="index.php?url=product">Data Produk</a>
-                                    <a class="nav-link" href="index.php?url=about">About</a>
-                                    <a class="nav-link" href="index.php?url=contact">Contact</a>
+                                    <a class="nav-link" href="index.php?url=jenis_produk">Data Jenis Produk</a>
+                                    <a class="nav-link" href="index.php?url=data_pelanggan">Data Pelanggan</a>
+                                    <a class="nav-link" href="index.php?url=data_pesanan">Data Pesanan</a>
+                                    <a class="nav-link" href="index.php?url=data_kartu">Data Kartu</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                                 </nav>
                             </div>
@@ -36,7 +38,7 @@
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="index.php?url=login">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="index.php?url=register">Register</a>
                                             <a class="nav-link" href="password.html">Forgot Password</a>
                                         </nav>
                                     </div>

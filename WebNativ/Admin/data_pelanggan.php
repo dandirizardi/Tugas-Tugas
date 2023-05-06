@@ -2,8 +2,8 @@
 
 //include_once 'top.php';
 //include_once 'menu.php';
-$model = new produk();
-$data_produk = $model->dataProduk();
+$model = new DataPelanggan();
+$data_pelanggan = $model->DataPelanggan();
 
 //foreach ($data_produk as $row){
 //    print $row['kode'];
@@ -34,42 +34,42 @@ $data_produk = $model->dataProduk();
                                         <tr>
                                             <th>No</th>
                                             <th>Kode</th>
-                                            <th>Name</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
+                                            <th>Nama</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu ID</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Kode</th>
-                                            <th>Name</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
+                                            <th>Nama</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu ID</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
 
                                     <?php 
                                     $no = 1;
-                                    foreach($data_produk as $row){
+                                    foreach($data_pelanggan as $row){
                                     
                                     ?>
                                         <tr>
                                             <td><?= $no ?></td>
                                             <td><?= $row['kode'] ?></td>
                                             <td><?= $row['nama'] ?></td>
-                                            <td><?= $row['harga_beli'] ?></td>
-                                            <td><?= $row['harga_jual'] ?></td>
-                                            <td><?= $row['stok'] ?></td>
-                                            <td><?= $row['min_stok'] ?></td>
-                                            <td><?= $row['jenis_produk_id'] ?></td>
+                                            <td><?= $row['jk'] ?></td>
+                                            <td><?= $row['tmp_lahir'] ?></td>
+                                            <td><?= $row['tgl_lahir'] ?></td>
+                                            <td><?= $row['email'] ?></td>
+                                            <td><?= $row['kartu_id'] ?></td>
                                         </tr>
                                         <?php 
                                             $no++;
