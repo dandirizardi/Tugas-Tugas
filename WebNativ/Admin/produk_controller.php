@@ -5,7 +5,7 @@ include_once 'models/produk.php';
 //step pertama yaitu menangkap request form
 $kode = $_POST['kode'];
 $nama = $_POST['nama'];
-$harga_jual = $_POST['harga_beli'];
+$harga_jual = $_POST['harga_jual'];
 $harga_beli = $_POST['harga_beli'];
 $stok = $_POST['stok'];
 $min_stok = $_POST['min_stok'];
@@ -28,6 +28,8 @@ switch($tombol){
     case 'simpan':$model->simpan($data); break;
     case 'ubah':
         $data[]= $_POST['idx']; $model->ubah($data);break;
+    case 'hapus':
+        unset($data); $model->hapus($_POST['idx']); break;
     default:
     header('Location:index.php?url=product');
     break;

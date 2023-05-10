@@ -5,9 +5,28 @@ $kartu = $model->getKartu($id);
 
 ?>
 <br>
-<div>
-    <h3>Kode : <?= $kartu['kode'] ?></h3>
-    <h3>Nama : <?= $kartu['nama'] ?></h3>
-    <h3>Diskon : <?= $kartu['diskon'] ?></h3>
-    <h3>Iuran : <?= $kartu['iuran'] ?></h3>
+<h1 class="mt-4">Kartu Detail</h1>
+<div class="card-body">
+    <div class="card mb-4">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama</th>
+                                            <th>Diskon</th>
+                                            <th>Iuran</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><?= $kartu['kode'] ?></td>
+                                            <td><?= $kartu['nama']?></td>
+                                            <td><?= $kartu['diskon']?></td>
+                                            <td><?= $kartu['iuran']?></td>
+  
+                                        </tr>
+                                    </tbody>
+                                    </table>
+</div>
 </div>

@@ -5,12 +5,33 @@ $pelanggan = $model->getPelanggan($id);
 
 ?>
 
-<div>
-    <h3>Kode : <?= $pelanggan['kode'] ?></h3>
-    <h3>Nama Pelanggan : <?= $pelanggan['nama'] ?></h3>
-    <h3>Jenis Kelamin : <?= $pelanggan['jk'] ?></h3>
-    <h3>Tempat Lahir : <?= $pelanggan['tmp_lahir'] ?></h3>
-    <h3>Tanggal Lahir : <?= $pelanggan['tgl_lahir'] ?></h3>
-    <h3>Email : <?= $pelanggan['email'] ?></h3>
-    <h3>Kartu ID : <?= $pelanggan['kartu_id'] ?></h3>
+
+<h1 class="mt-4">Pelanggan Detail</h1>
+<div class="card-body">
+    <div class="card mb-4">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Kode</th>
+                                            <th>Nama Pelanggan</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Email</th>
+                                            <th>Kartu ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><?= $pelanggan['kode'] ?></td>
+                                            <td><?= $pelanggan['nama']?></td>
+                                            <td><?= $pelanggan['jk']?></td>
+                                            <td><?= $pelanggan['tmp_lahir']?></td>
+                                            <td><?= $pelanggan['tgl_lahir'] ?></td>
+                                            <td><?= $pelanggan['email'] ?></td>
+                                            <td><?= $pelanggan['kartu_id'] ?></td>
+                                        </tr>
+                                    </tbody>
+                                    </table>
+</div>
 </div>
