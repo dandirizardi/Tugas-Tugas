@@ -1,5 +1,6 @@
 <?php
-
+include_once 'Admin/koneksi.php';
+include_once 'Admin/models/produk.php';
 include_once 'header.php';
 
 ?>

@@ -8,7 +8,8 @@ $data_produk = $model->dataProduk();
 //foreach ($data_produk as $row){
 //    print $row['kode'];
 //}
-
+$sesi = $_SESSION['MEMBER'];
+if(isset($sesi)){
 ?>
 
                         <h1 class="mt-4">Tables</h1>
@@ -21,7 +22,11 @@ $data_produk = $model->dataProduk();
                                <!-- DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
                                 <a target="_blank" href="https://datatables.net/">official DataTables documentation</a> -->
                                 <!-- membuat tombol mengarah ke file produk_form.php -->
+                                <?php 
+                                    if($sesi['role'] != 'staff'){
+                                 ?>
                                 <a href="index.php?url=product_form" class="btn btn-primary btn-sm">Tambah</a>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -75,12 +80,19 @@ $data_produk = $model->dataProduk();
                                             <td><?= $row['jenis_produk_id'] ?></td>
                                             <td>
                                                 <form action="produk_controller.php" method="POST">
+                                                    
                                                     <a class="btn btn-info btn-sm" href="index.php?url=product_detail&id=<?= $row ['id'] ?>">Detail</a>
+                                                    <?php 
+                                                        if($sesi['role'] != ('staff1' && 'manager')){
+
+                                                    ?>
                                                     <a class="btn btn-warning btn-sm" href="index.php?url=product_form&idedit=<?= $row ['id']?>">Ubah</a>
+                                                    
                                                     <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                                     onclick="return confirm('Anda yakin akan dihapus ?')">Hapus</button>
 
                                                     <input type="hidden" name="idx" value="<?= $row['id']?>">
+                                                    <?php } ?>
                                                 </form>
                                             </td>
                                         </tr>
@@ -96,5 +108,9 @@ $data_produk = $model->dataProduk();
                     </div>
 
                     <?php 
+
+        } else {
+            echo '<script> alert("Anda tidak boleh masuk");history.back();</script>';
+        }
                     
                     ?>
